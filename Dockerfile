@@ -1,5 +1,6 @@
 FROM certbot/certbot
 
-ADD start.sh /bin/start.sh
+RUN mkdir /etc/letsencrypt/certs
+COPY start.sh /bin/start.sh
 
 ENTRYPOINT  [ "/bin/start.sh" ]

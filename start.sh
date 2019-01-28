@@ -25,6 +25,7 @@ WEBROOT_PATH="/tmp/letsencrypt"
 
 le_fixpermissions() {
     echo "[INFO] Fixing permissions"
+        cp /etc/letsencrypt/live/$SERVER_NAME/* /etc/letsencrypt/certs
         chown -R ${CHOWN:-root:root} /etc/letsencrypt
         find /etc/letsencrypt -type d -exec chmod 755 {} \;
         find /etc/letsencrypt -type f -exec chmod ${CHMOD:-644} {} \;
