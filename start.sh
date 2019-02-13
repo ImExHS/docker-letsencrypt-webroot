@@ -34,7 +34,7 @@ le_fixpermissions() {
 le_renew() {
     echo "waiting for server to be ready...."
     sleep 30
-    certbot certonly --webroot --agree-tos --renew-by-default -n --text ${ADDITIONAL} -m ${EMAIL_ADDRESS} -w ${WEBROOT_PATH} -d ${SERVER_NAME}
+    certbot certonly --webroot --agree-tos --keep-until-expiring -n --text ${ADDITIONAL} -m ${EMAIL_ADDRESS} -w ${WEBROOT_PATH} -d ${SERVER_NAME}
     le_fixpermissions
 }
 
